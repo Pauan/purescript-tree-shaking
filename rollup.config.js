@@ -3,7 +3,7 @@ import purs from "./rollup-plugin-purs.js";
 
 export default {
   entry: "Main.js",
-  dest: "dist/main.js",
+  dest: "dist/main-rollup.js",
   format: "iife",
   plugins: [
     resolve(),

@@ -16,10 +16,14 @@
   "scripts": {
     "prepublish": "bower install && mkdir -p dist",
 
-    "build:rollup": "pulp build && rollup --config && npm run uglify",
-    "build:webpack": "pulp build && webpack && npm run uglify",
-    "build:psc-bundle": "pulp build --main Main --optimise --to dist/main.js && npm run uglify",
+    "build:rollup": "pulp build && rollup --config && npm run uglify:rollup",
+    "build:webpack": "pulp build && webpack && npm run uglify:webpack",
+    "build:psc-bundle": "pulp build --main Main --optimise --to dist/main-psc-bundle.js && npm run uglify:psc-bundle",
+    "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/main-pulp-browserify.js && npm run uglify:pulp-browserify",
 
-    "uglify": "uglifyjs dist/main.js --screw-ie8 --mangle --compress --output dist/main.min.js"
+    "uglify:rollup": "uglifyjs dist/main-rollup.js --output dist/main-rollup.min.js --screw-ie8 --mangle --compress",
+    "uglify:webpack": "uglifyjs dist/main-webpack.js --output dist/main-webpack.min.js --screw-ie8 --mangle --compress",
+    "uglify:psc-bundle": "uglifyjs dist/main-psc-bundle.js --output dist/main-psc-bundle.min.js --screw-ie8 --mangle --compress",
+    "uglify:pulp-browserify": "uglifyjs dist/main-pulp-browserify.js --output dist/main-pulp-browserify.min.js --screw-ie8 --mangle --compress"
   }
 }
