@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "purescript-tree-shaking",
+  "version": "1.0.0",
+  "devDependencies": {
+    "purescript": "^0.9.3",
+    "pulp": "^9.0.1",
+    "bower": "^1.7.9",
+    "uglify-js": "^2.7.3",
+
+    "webpack": "^2.1.0-beta.25",
+
+    "rollup": "^0.36.1",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  },
+  "scripts": {
+    "prepublish": "bower install && mkdir -p dist",
+
+    "build:rollup": "pulp build && rollup --config && npm run uglify",
+    "build:webpack": "pulp build && webpack && npm run uglify",
+    "build:psc-bundle": "pulp build --main Main --optimise --to dist/main.js && npm run uglify",
+
+    "uglify": "uglifyjs dist/main.js --screw-ie8 --mangle --compress --output dist/main.min.js"
+  }
+}

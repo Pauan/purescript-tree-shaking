@@ -1,0 +1,14 @@
+{
+  "name": "purescript-tree-shaking",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "devDependencies": {
+    "purescript-eff": "^1.0.0",
+    "purescript-prelude": "^1.1.0",
+    "purescript-console": "^1.0.0"
+  }
+}
