@@ -9,12 +9,12 @@ import View (observe, view)
 
 main :: Eff (mutable :: MUTABLE, console :: CONSOLE) Unit
 main = do
-  a <- makeMutable 1
-  b <- makeMutable 2
-  c <- makeMutable 3
+  m1 <- makeMutable 1
+  m2 <- makeMutable 2
+  m3 <- makeMutable 3
   void $ observe
-    (lift3 (\a b c -> a + b + c) (view a) (view b) (view c))
+    (lift3 (\a b c -> a + b + c) (view m1) (view m2) (view m3))
     (\a -> log $ show a)
-  set a 20
-  set b 30
-  set c 40
+  set m1 20
+  set m2 30
+  set m3 40

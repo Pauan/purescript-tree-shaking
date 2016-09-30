@@ -3,7 +3,7 @@ module Mutable (MUTABLE, Mutable, makeMutable, get, set) where
 import Prelude
 import Data.Function.Uncurried (Fn3, runFn3)
 import Control.Monad.Eff (Eff)
-import View
+import View (class ToView, View)
 
 
 foreign import data MUTABLE :: !

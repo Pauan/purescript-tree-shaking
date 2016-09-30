@@ -21,7 +21,7 @@ module.exports = function (content) {
   ]
 
   const out = funcs.reduce((prev, curr) => curr(prev), content)
-  console.log(out)
+
   return out
 }
 

@@ -23,7 +23,6 @@ export default function (options) {
       ]
 
       const out = funcs.reduce((prev, curr) => curr(prev), code)
-      console.log(out)
 
       return {
         code: out,
