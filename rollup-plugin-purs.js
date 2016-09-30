@@ -1,9 +1,5 @@
 "use strict"
 
-/*
- * Webpack 2 loader that can take CommonJS output by psc 0.9.1 and convert
- * it into tree shakable ES6 modules. No transpiling required.
- */
 const fs = require('fs')
 
 const commonJsRequire = /var ([_$a-zA-Z0-9]+) = require\([\'\"]([^\'\"]+)[\'\"]\)/g
