@@ -18,12 +18,12 @@
 
     "build:rollup": "pulp build && rollup --config && npm run uglify:rollup",
     "build:webpack": "pulp build && webpack && npm run uglify:webpack",
-    "build:psc-bundle": "pulp build --main Main --optimise --to dist/main-psc-bundle.js && npm run uglify:psc-bundle",
-    "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/main-pulp-browserify.js && npm run uglify:pulp-browserify",
+    "build:psc-bundle": "pulp build --main Main --optimise --to dist/psc-bundle.js && npm run uglify:psc-bundle",
+    "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/pulp-browserify.js && npm run uglify:pulp-browserify",
 
-    "uglify:rollup": "uglifyjs dist/main-rollup.js --output dist/main-rollup.min.js --screw-ie8 --mangle --compress",
-    "uglify:webpack": "uglifyjs dist/main-webpack.js --output dist/main-webpack.min.js --screw-ie8 --mangle --compress",
-    "uglify:psc-bundle": "uglifyjs dist/main-psc-bundle.js --output dist/main-psc-bundle.min.js --screw-ie8 --mangle --compress",
-    "uglify:pulp-browserify": "uglifyjs dist/main-pulp-browserify.js --output dist/main-pulp-browserify.min.js --screw-ie8 --mangle --compress"
+    "uglify:rollup": "uglifyjs dist/rollup.js --output dist/rollup.min.js --screw-ie8 --mangle --compress",
+    "uglify:webpack": "uglifyjs dist/webpack.js --output dist/webpack.min.js --screw-ie8 --mangle --compress",
+    "uglify:psc-bundle": "uglifyjs dist/psc-bundle.js --output dist/psc-bundle.min.js --screw-ie8 --mangle --compress",
+    "uglify:pulp-browserify": "uglifyjs dist/pulp-browserify.js --output dist/pulp-browserify.min.js --screw-ie8 --mangle --compress"
   }
 }
