@@ -20,6 +20,8 @@ module.exports = function (content) {
     upconvertFfiExports
   ]
 
+  content = content.replace(/([_$a-zA-Z][_$a-zA-Z0-9]*)\["([_$a-zA-Z][_$a-zA-Z0-9]*)"\]/g, "$1.$2");
+
   const out = funcs.reduce((prev, curr) => curr(prev), content)
 
   return out

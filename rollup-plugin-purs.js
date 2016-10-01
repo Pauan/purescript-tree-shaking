@@ -12,6 +12,8 @@ export default function (options) {
     name: "purs",
 
     transform: function (code, id) {
+      code = code.replace(/([_$a-zA-Z][_$a-zA-Z0-9]*)\["([_$a-zA-Z][_$a-zA-Z0-9]*)"\]/g, "$1.$2");
+
       const funcs = [
         upconvertImports,
         upconvertExports,
