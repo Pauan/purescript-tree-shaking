@@ -2,16 +2,16 @@ Installation
 ============
 
 ```
-npm install
+yarn
 ```
 
 Building
 ========
 
 ```
-npm run build:psc-bundle
-npm run build:rollup
-npm run build:webpack
+yarn run build:psc-bundle
+yarn run build:rollup
+yarn run build:webpack
 ```
 
 The output is in the `dist` directory.
