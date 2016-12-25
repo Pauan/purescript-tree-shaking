@@ -3,24 +3,22 @@
   "name": "purescript-tree-shaking",
   "version": "1.0.0",
   "devDependencies": {
-    "purescript": "^0.10.3",
-    "pulp": "^10.0.0",
     "bower": "^1.8.0",
-    "uglify-js": "^2.7.5",
-
-    "webpack": "^2.2.0-rc.1",
-
+    "pulp": "^10.0.0",
+    "purescript": "^0.10.3",
     "rollup": "^0.37.2",
-    "rollup-plugin-node-resolve": "^2.0.0"
+    "rollup-plugin-commonjs": "^6.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-purs": "Pauan/rollup-plugin-purs",
+    "uglify-js": "^2.7.5",
+    "webpack": "^2.2.0-rc.1"
   },
   "scripts": {
     "prepublish": "bower install && mkdir -p dist",
-
     "build:rollup": "pulp build && rollup --config && npm run uglify:rollup",
     "build:webpack": "pulp build && webpack && npm run uglify:webpack",
     "build:psc-bundle": "pulp build --main Main --optimise --to dist/psc-bundle.js && npm run uglify:psc-bundle",
     "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/pulp-browserify.js && npm run uglify:pulp-browserify",
-
     "uglify:rollup": "uglifyjs dist/rollup.js --output dist/rollup.min.js --screw-ie8 --mangle --compress",
     "uglify:webpack": "uglifyjs dist/webpack.js --output dist/webpack.min.js --screw-ie8 --mangle --compress",
     "uglify:psc-bundle": "uglifyjs dist/psc-bundle.js --output dist/psc-bundle.min.js --screw-ie8 --mangle --compress",

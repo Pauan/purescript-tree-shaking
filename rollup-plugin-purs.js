@@ -1,7 +1,5 @@
 "use strict"
 
-const fs = require('fs')
-
 const commonJsRequire = /var ([_$a-zA-Z0-9]+) = require\([\'\"]([^\'\"]+)[\'\"]\)/g
 const moduleExports = /module\.exports = \{(\n(    ([\"\'_$a-zA-Z0-9]+): ([_$a-zA-Z0-9\.]+)(, )?\n)*)?\};/m
 const actualExports = /(    ((?:[\'\"][^\'\"]+[\'\"])|(?:[_$a-zA-Z0-9]+)): ([_$a-zA-Z0-9\.]+)(, )?\n)/g
