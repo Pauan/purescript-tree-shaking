@@ -2652,9 +2652,9 @@ rollup-plugin-node-resolve@^2.0.0:
     builtin-modules "^1.1.0"
     resolve "^1.1.6"
 
-rollup-plugin-purs@Pauan/rollup-plugin-purs:
+rollup-plugin-purs@Pauan/rollup-plugin-purs#411f1bfad1644ad5a31ef6211cc98b006736f688:
   version "1.0.0"
-  resolved "https://codeload.github.com/Pauan/rollup-plugin-purs/tar.gz/9c6f1b7260ffeb350e5cbd02984bc5e15296532a"
+  resolved "https://codeload.github.com/Pauan/rollup-plugin-purs/tar.gz/411f1bfad1644ad5a31ef6211cc98b006736f688"
   dependencies:
     recast "^0.11.18"
     rollup-pluginutils "^1.5.2"
