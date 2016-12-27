@@ -6,10 +6,10 @@
     "bower": "^1.8.0",
     "pulp": "^10.0.0",
     "purescript": "^0.10.3",
-    "rollup": "^0.37.2",
-    "rollup-plugin-commonjs": "^6.0.0",
+    "rollup": "^0.38.1",
+    "rollup-plugin-commonjs": "^6.0.1",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#5e50a0405c28f8024adc83ee894a7acd4f66a20e",
+    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#e35d2a7d32c0abb7be17a209b8f5be704f549bf3",
     "rollup-plugin-sourcemaps": "^0.4.1",
     "uglify-js": "^2.7.5",
     "webpack": "^2.2.0-rc.1"
