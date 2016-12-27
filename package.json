@@ -18,7 +18,7 @@
     "prepublish": "bower install && mkdir -p dist",
     "build:rollup": "pulp build -- --source-maps && rollup --config && npm run uglify:rollup",
     "build:webpack": "pulp build -- --source-maps && webpack && npm run uglify:webpack",
-    "build:psc-bundle": "pulp build --main Main --optimise --to dist/psc-bundle.js -- --source-maps && npm run uglify:psc-bundle",
+    "build:psc-bundle": "pulp build --main Main --optimise --to dist/psc-bundle.js && npm run uglify:psc-bundle",
     "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/pulp-browserify.js && npm run uglify:pulp-browserify",
     "uglify:rollup": "uglifyjs dist/rollup.js --output dist/rollup.min.js --screw-ie8 --mangle --compress",
     "uglify:webpack": "uglifyjs dist/webpack.js --output dist/webpack.min.js --screw-ie8 --mangle --compress",
