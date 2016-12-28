@@ -1,46 +1,87 @@
 "use strict";
 
-var $events = require("../Events/foreign.js");
-var $view = require("../View/foreign.js");
 
+exports.makeImpl = function (Broadcaster) {
+  return function (receive) {
+    return function (unit) {
+      return function (value) {
+        return function (state) {
+          var self = {
+            snapshot: {
+              id: 0,
+              value: value
+            },
 
-function Mutable(value) {
-  this.value = value;
-  this.listeners = $events.makeEvents();
-}
+            listeners: Broadcaster(),
 
+            // TODO is this correct ?
+            // TODO can this be made faster ?
+            view: {
+              snapshot: function () {
+                return self.snapshot;
+              },
+              subscribe: function (push) {
+                // TODO make this faster ?
+                return receive(function (id) {
+                  return function () {
+                    push(id);
+                    return unit;
+                  };
+                })(self.listeners)();
+              }
+            }
+          };
 
-exports.makeMutable = function (value) {
-  return function () {
-    return new Mutable(value);
-  };
-};
-
-
-exports.get = function (mutable) {
-  return function () {
-    return mutable.value;
-  };
-};
-
-
-exports.setImpl = function (mutable, value) {
-  return function () {
-    if (mutable.value !== value) {
-      mutable.value = value;
-
-      return $events.send(mutable.listeners, value);
-    }
+          return self;
+        };
+      };
+    };
   };
 };
 
 
 exports.viewImpl = function (mutable) {
-  return $view.makeView(function (push) {
-    var stop = $events.receive(mutable.listeners, push);
+  return mutable.view;
+};
 
-    push(mutable.value);
 
-    return stop;
-  });
+exports.get = function (mutable) {
+  return function (state) {
+    return mutable.snapshot.value;
+  };
+};
+
+
+// TODO test this
+exports.setImpl = function (send) {
+  return function (unit) {
+    return function (newValue) {
+      return function (mutable) {
+        return function (state) {
+          var oldSnapshot = mutable.snapshot;
+
+          // Optimization for speed: if the value hasn't changed, then there's no reason to push
+          if (oldSnapshot.value !== newValue) {
+            // TODO do this per `Mutable` rather than per `set`
+            state.push({
+              rollback: function () {
+                mutable.snapshot = oldSnapshot;
+              },
+              commit: function (id) {
+                return send(id)(mutable.listeners)();
+              }
+            });
+
+            mutable.snapshot = {
+              // TODO is this correct ?
+              id: oldSnapshot.id + 1,
+              value: newValue
+            };
+          }
+
+          return unit;
+        };
+      };
+    };
+  };
 };

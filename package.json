@@ -9,20 +9,20 @@
     "rollup": "^0.38.1",
     "rollup-plugin-commonjs": "^6.0.1",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#cbf66562e59b5c162cfa2ed4f76f3ec290678d57",
+    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#62f0c243cb1a3eedd1253ccac575e64ebd32e71d",
     "rollup-plugin-sourcemaps": "^0.4.1",
     "uglify-js": "^2.7.5",
     "webpack": "^2.2.0-rc.1"
   },
   "scripts": {
-    "prepublish": "bower install && mkdir -p dist",
-    "build:rollup": "pulp build -- --source-maps && rollup --config && npm run uglify:rollup",
-    "build:webpack": "pulp build -- --source-maps && webpack && npm run uglify:webpack",
-    "build:psc-bundle": "pulp build --main Main --optimise --to dist/psc-bundle.js && npm run uglify:psc-bundle",
-    "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/pulp-browserify.js && npm run uglify:pulp-browserify",
-    "uglify:rollup": "uglifyjs dist/rollup.js --output dist/rollup.min.js --screw-ie8 --mangle --compress",
-    "uglify:webpack": "uglifyjs dist/webpack.js --output dist/webpack.min.js --screw-ie8 --mangle --compress",
-    "uglify:psc-bundle": "uglifyjs dist/psc-bundle.js --output dist/psc-bundle.min.js --screw-ie8 --mangle --compress",
-    "uglify:pulp-browserify": "uglifyjs dist/pulp-browserify.js --output dist/pulp-browserify.min.js --screw-ie8 --mangle --compress"
+    "prepublish": "bower install && mkdir -p dist/js",
+    "build:rollup": "pulp build -- --source-maps && rollup --config && yarn run uglify:rollup",
+    "build:webpack": "pulp build -- --source-maps && webpack && yarn run uglify:webpack",
+    "build:psc-bundle": "pulp build --main Main --optimise --to dist/js/psc-bundle.js && yarn run uglify:psc-bundle",
+    "build:pulp-browserify": "pulp browserify --main Main --optimise --to dist/js/pulp-browserify.js && yarn run uglify:pulp-browserify",
+    "uglify:rollup": "uglifyjs dist/js/rollup.js --output dist/js/rollup.min.js --screw-ie8 --mangle --compress",
+    "uglify:webpack": "uglifyjs dist/js/webpack.js --output dist/js/webpack.min.js --screw-ie8 --mangle --compress",
+    "uglify:psc-bundle": "uglifyjs dist/js/psc-bundle.js --output dist/js/psc-bundle.min.js --screw-ie8 --mangle --compress",
+    "uglify:pulp-browserify": "uglifyjs dist/js/pulp-browserify.js --output dist/js/pulp-browserify.min.js --screw-ie8 --mangle --compress"
   }
 }
