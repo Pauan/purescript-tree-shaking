@@ -9,7 +9,7 @@
     "rollup": "^0.38.1",
     "rollup-plugin-commonjs": "^6.0.1",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#62f0c243cb1a3eedd1253ccac575e64ebd32e71d",
+    "rollup-plugin-purs": "Pauan/rollup-plugin-purs#608d312c25f7ff88dd3addfe5a30d300db6c80b0",
     "rollup-plugin-sourcemaps": "^0.4.1",
     "uglify-js": "^2.7.5",
     "webpack": "^2.2.0-rc.1"
