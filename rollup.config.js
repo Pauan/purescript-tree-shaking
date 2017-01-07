@@ -7,7 +7,9 @@ export default {
   format: "iife",
   sourceMap: true,
   plugins: [
-    purs(),
+    purs({
+      uncurry: true
+    }),
     resolve()
   ]
 };
