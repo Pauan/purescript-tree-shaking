@@ -1,5 +1,6 @@
 import resolve from "rollup-plugin-node-resolve";
 import purs from "rollup-plugin-purs";
+import sourcemaps from "rollup-plugin-sourcemaps";
 
 export default {
   entry: "src/Main.purs",
@@ -8,8 +9,11 @@ export default {
   sourceMap: true,
   plugins: [
     purs({
-      uncurry: true
+      uncurry: true,
+      inline: true
     }),
-    resolve()
+
+    resolve(),
+    //sourcemaps()
   ]
 };

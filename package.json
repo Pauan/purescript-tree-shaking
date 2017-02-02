@@ -9,7 +9,7 @@
     "rollup": "^0.41.1",
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-purs": "^1.0.2",
+    "rollup-plugin-purs": "^1.0.4",
     "rollup-plugin-sourcemaps": "^0.4.1",
     "uglify-js": "^2.7.5",
     "webpack": "^2.2.0-rc.1"
