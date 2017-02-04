@@ -1,4 +1,3 @@
-import resolve from "rollup-plugin-node-resolve";
 import purs from "rollup-plugin-purs";
 import sourcemaps from "rollup-plugin-sourcemaps";
 
@@ -11,9 +10,7 @@ export default {
     purs({
       uncurry: true,
       inline: true
-    }),
-
-    resolve(),
+    })
     //sourcemaps()
   ]
 };
