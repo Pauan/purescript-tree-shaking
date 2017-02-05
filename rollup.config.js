@@ -9,8 +9,9 @@ export default {
   plugins: [
     purs({
       uncurry: true,
-      inline: true
-    })
+      inline: true,
+      debug: true
+    }),
     //sourcemaps()
   ]
 };
