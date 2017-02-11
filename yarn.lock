@@ -2595,9 +2595,9 @@ punycode@^1.2.4, punycode@^1.3.2, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-purescript@^0.10.5:
-  version "0.10.6"
-  resolved "https://registry.yarnpkg.com/purescript/-/purescript-0.10.6.tgz#a382d7ac2d3258e010118c8db49cb6c13407b450"
+purescript@0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/purescript/-/purescript-0.10.5.tgz#ddb01e27d3152721e50f2b2541fec415837e09b3"
   dependencies:
     async-each-series "^1.0.0"
     bin-build "^2.2.0"
@@ -2854,8 +2854,8 @@ rollup-plugin-commonjs@^7.0.0:
     rollup-pluginutils "^1.5.1"
 
 rollup-plugin-purs@^1.0.4:
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-purs/-/rollup-plugin-purs-1.0.20.tgz#816e8af940c68508bc26da59befb9d1c27bb50fd"
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-purs/-/rollup-plugin-purs-1.0.24.tgz#b3fbba37655b81683ada8d6dbbe9c96c670210fe"
   dependencies:
     babel-core "^6.22.1"
     babel-plugin-minify-constant-folding "^0.0.3"
@@ -3330,7 +3330,7 @@ uid-number@~0.0.6:
 
 umd@^3.0.0:
   version "3.0.1"
-  resolved "http://registry.npmjs.org/umd/-/umd-3.0.1.tgz#8ae556e11011f63c2596708a8837259f01b3d60e"
+  resolved "https://registry.yarnpkg.com/umd/-/umd-3.0.1.tgz#8ae556e11011f63c2596708a8837259f01b3d60e"
 
 unique-stream@^2.0.2:
   version "2.2.1"
