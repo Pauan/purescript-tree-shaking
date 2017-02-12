@@ -1,18 +1,1 @@
-Installation
-============
-
-```
-yarn
-```
-
-Building
-========
-
-```
-yarn run build:psc-bundle
-yarn run build:rollup
-yarn run build:webpack
-yarn run build:pulp-browserify
-```
-
-The output is in the `dist/js` directory.
+This repository has been moved into [`rollup-plugin-purs/examples/tab-organizer`](https://github.com/Pauan/rollup-plugin-purs/tree/master/examples/tab-organizer)
